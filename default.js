@@ -18,17 +18,19 @@ function beneficiosHandler (options, event, context, callback) {//se crea la fun
 	callback(options, event, context);
 	});
 }
-
-function MessageHandler(options,event, context,callback ) { 
-    if(event.message== "beneficios0") { 
-    	options.data.detalles = "soy tomas";
-        //context.sendResponse("Hello!"); 
-       
+function MessageHandler(options, event, context, callback) {
+	context.console.log("test");
+    if(event.message.toLowerCase == "beneficios0") { 
+    	//options.next_state = 'beneficiosLabel';
+    	options.data.detalles == "soy tomas";
+    	//context.sendResponse = ("soy tomas");
     } 
-     callback(options, event, context);
+    callback(options, event, context);
 }
+
 
 module.exports.main = {//exportamos los titulos
     beneficiosLabel: beneficiosHandler,
     user1: MessageHandler
+    // suser1: beneficiosHandler
 }
