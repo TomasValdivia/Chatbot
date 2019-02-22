@@ -3,7 +3,8 @@ function beneficiosHandler (options, event, context, callback) {//se crea la fun
 	context.simplehttp.makeGet ("https://praxair.rubixware.com/api/v1/benefits/", {}, function (context, event) { //hacemos una instancia al API
 	var res = JSON.parse(event.getresp);//obtenemos los datos de la api en json
 	options.data.beneficios0 = res.benefits_categories.benefits[0].title;//accedemos al titulo de cada beneficio
-		//options.data.beneficios0 = res.benefits_categories.benefits[0].id;
+	options.data.detalles = res.benefits_categories.benefits[0].description;
+
 	options.data.beneficios1 = res.benefits_categories.benefits[1].title;
 	options.data.beneficios2 = res.benefits_categories.benefits[2].title;
 	options.data.beneficios3 = res.benefits_categories.benefits[3].title;
@@ -18,19 +19,10 @@ function beneficiosHandler (options, event, context, callback) {//se crea la fun
 	callback(options, event, context);
 	});
 }
-function MessageHandler(options, event, context, callback) {
-	context.console.log("test");
-    if(event.message.toLowerCase == "beneficios0") { 
-    	//options.next_state = 'beneficiosLabel';
-    	options.data.detalles == "soy tomas";
-    	//context.sendResponse = ("soy tomas");
-    } 
-    callback(options, event, context);
-}
 
 
 module.exports.main = {//exportamos los titulos
     beneficiosLabel: beneficiosHandler,
-    user1: MessageHandler
+    user1: beneficiosHandler
     // suser1: beneficiosHandler
 }
