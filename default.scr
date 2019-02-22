@@ -4,5 +4,5 @@ Bienvenido soy un asistente del área de RH, encargado de resolver cualquier dud
         timeLabel: ok | OK | Ok | oK 
             Estos son tus beneficios, si tienes alguna duda al respecto puedes seleccionar cualquiera de las siguientes opciones:[[{{beneficios0}},{{beneficios1}},{{beneficios2}},{{beneficios3}},{{beneficios4}},{{beneficios5}},{{beneficios6}},{{beneficios7}},{{beneficios8}},{{beneficios9}},{{beneficios10}}]]
             	beneficios0
-            		Este beneficio dice que:{{detalles}}
+            		bot1:Este beneficio dice que:{{detalles}}
             
