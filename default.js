@@ -14,26 +14,21 @@ function beneficiosHandler (options, event, context, callback) {//se crea la fun
 	options.data.beneficios8 = res.benefits_categories.benefits[8].title;
 	options.data.beneficios9 = res.benefits_categories.benefits[9].title;
 	options.data.beneficios10 = res.benefits_categories.benefits[10].title;
-	if (event.message == "beneficios0") {
-		options.next_state ='detallesLabel';
-		options.data.detalles = "Tomas";
-	}
 	
 	callback(options, event, context);
 	});
 }
 
-module.exports.main = {//exportamos los titulos
-    timeLabel: beneficiosHandler,
-    bot1: beneficiosHandler
+function MessageHandler(options,event, context,callback ) { 
+    if(event.message== "beneficios0") { 
+    	options.data.detalles = "soy tomas";
+        //context.sendResponse("Hello!"); 
+       
+    } 
+     callback(options, event, context);
 }
 
- //context.simplehttp.makeGet ("https://praxair.rubixware.com/api/v1/benefits/");
-//	var consultar = JSON.parse(event.getresp);
-//	var beneficios = consultar.benefits_categories.benefits;
-//	var resp="";
-//	for (var i = 0; i < beneficios.length; i++) {
-//		resp = resp + beneficios[i].title + "\n";
-//	}
-
-//	context.sendResponse(resp);
+module.exports.main = {//exportamos los titulos
+    beneficiosLabel: beneficiosHandler,
+    user1: MessageHandler
+}
