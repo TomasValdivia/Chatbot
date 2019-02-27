@@ -1,8 +1,28 @@
 [main]
 Bienvenido soy un asistente del área de RH, encargado de resolver cualquier duda o aclaración de los empleados:continue
-	Si tienes alguna duda escribe "ok"
+	Si tiene alguna duda escribe "ok"
         beneficiosLabel: ok | OK | Ok | oK 
-            Estos son tus beneficios, si tienes alguna duda al respecto puedes seleccionar cualquiera de las siguientes opciones:[[{{beneficios0}},{{beneficios1}},{{beneficios2}},{{beneficios3}},{{beneficios4}},{{beneficios5}},{{beneficios6}},{{beneficios7}},{{beneficios8}},{{beneficios9}},{{beneficios10}}]]
-            	user1: beneficios0
-            		Este beneficio dice que:\n{{detalles}}
-            
+            bot:Estos son tus beneficios, si tienes alguna duda puedes seleccionar una de las siguientes opciones:[[{{b1}},{{b2}},{{b3}},{{b4}},{{b5}},{{b6}},{{b7}},{{b8}},{{b9}},{{b10}},{{b11}}]]
+            	user1: b1
+            		bot1:{{descr1}}
+            	user2: b2
+            		bot2:{{descr2}} 
+            	user3: b3
+            		bot3:{{descr3}} 
+            	user4: b4
+            		bot4:{{descr4}}
+            	user5: b5
+            		bot5:{{descr5}}
+            	user6: b6
+            		bot6:{{descr6}}
+            	user7: b7
+            		bot7:{{descr7}}
+            	user8: b8
+            		bot8:{{descr8}}
+            	user9: b9
+            		bot9:{{descr9}}
+            	user10: b10
+            		bot10:{{descr10}}
+            	user11: b11
+        			bot11:{{descr11}}
+            	
