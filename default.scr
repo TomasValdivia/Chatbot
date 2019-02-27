@@ -4,7 +4,12 @@ Bienvenido soy un asistente del área de RH, encargado de resolver cualquier dud
         beneficiosLabel: ok | OK | Ok | oK 
             bot:Estos son tus beneficios, si tienes alguna duda puedes seleccionar una de las siguientes opciones:[[{{b1}},{{b2}},{{b3}},{{b4}},{{b5}},{{b6}},{{b7}},{{b8}},{{b9}},{{b10}},{{b11}}]]
             	user1: b1
-            		bot1:{{descr1}}
+            		bot1:{{descr1}}:continue
+            			bot1_1:Desea ver los detalles de este beneficio... [[Si, No]]
+            				user1_1:Si
+            					bot1_1_2:Puedes consultar los detalles en este Link: {{url1}}
+            				user1_2:No
+            					Deseas realizar otra consulta..[[Si, No]]
             	user2: b2
             		bot2:{{descr2}} 
             	user3: b3

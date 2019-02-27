@@ -1,6 +1,5 @@
-
 //ESTA FUNCION PERMITE OBTENER TODOS LOS BENEFICIOS DE LA API
-function menuHandler (options, event, context, callback) {//se crea la funcion
+function menuHandler (options, event, context, callback) {
 	context.simplehttp.makeGet ("https://praxair.rubixware.com/api/v1/benefits/", {}, function (context, event) {
 		var beneficios = JSON.parse(event.getresp);//obtenemos todos los beneficios de la API en json
 		//accedemos al titulo de cada beneficio
@@ -52,10 +51,25 @@ function menuHandler (options, event, context, callback) {//se crea la funcion
 	    	options.next_state ='bot9';
 	    	options.data.descr9 = beneficios.benefits_categories.benefits[8].description;
 	    }
-	    
-	  
+	    if(event.message == "Apoyo Escolar"){
+	    	options.next_state = 'bot10';
+	    	options.data.descr10 = beneficios.benefits_categories.benefits[9].description;
+	    }
+	    if(event.message == "Seguro de Vida"){
+	    	options.next_state='bot11';
+	    	options.data.descr11 = beneficios.benefits_categories.benefits[10].description;
+	    }
 		callback(options, event, context);
 	});
+}
+
+//ESTA FUNCION PERMITE OBTENER TODAS LAS URL'S DE CADA BENEFICIO
+function urlHandler(options, event, context, callback){
+	if(event.message=="Si"){
+		options.next_state='bot1_1_2';
+		options.data.url1 = "https://praxair.rubixware.com/benefits/11";
+	}
+	callback(options,event,context);
 }
 
 module.exports.main = {//exportamos los titulos
