@@ -50,8 +50,9 @@ function menuHandler (options, event, context, callback) {//se crea la funcion
 	    }
 	    if(event.message == "Plan de Pensiones Futura"){
 	    	options.next_state ='bot9';
-	    	options.data.descr9 = beneficios.benefic
+	    	options.data.descr9 = beneficios.benefits_categories.benefits[8].description;
 	    }
+	    
 	  
 		callback(options, event, context);
 	});
