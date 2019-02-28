@@ -15,6 +15,7 @@ function ScriptHandler(context, event){
     var options = Object.assign({}, scr_config);
     options.current_dir = __dirname;
     options.data={};
+    //options.apikey = "YOUR-API-KEY";
     //options.default_message = "Sorry Some Error Occurred.";
     // You can add any start point by just mentioning the <script_file_name>.<section_name>
     // options.start_section = "default.main";

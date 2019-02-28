@@ -69,17 +69,30 @@ function urlHandler(options, event, context, callback){
 		options.next_state='bot1_1_2';
 		options.data.url1 = "https://praxair.rubixware.com/benefits/11";
 	}
+	if(event.message=="No"){
+		options.next_state='bot1_1_3';
+	}
+
 	callback(options,event,context);
 }
-
+//ESTA FUNCION PERMITE OBTENER LOS CONTACTOS DE LA API
+function contactoHandler(options,event,context,callback){
+	context.simplehttp.makeGet ("https://praxair.rubixware.com/api/v1/contacts", {}, function (context, event) {
+	var ResContac=JSON.parse(event.getresp);
+		if(event.message =="No"){
+			options.next_state='rh';
+			options.data.responsable = ResContac.responsible[0].name;
+			options.data.correo = ResContac.responsible[0].email;
+			options.data.telefono = ResContac.responsible[0].phones[0].phone;
+			options.data.ext = ResContac.responsible[0].phones[0].extention;
+			options.data.horario = ResContac.responsible[0].bussines_hours;
+			}
+		callback(options,event,context);
+	});
+}
 module.exports.main = {//exportamos los titulos
     beneficiosLabel: menuHandler,
-    bot: menuHandler
-
-
-    //user1: menuHandler,
-    //bot2: menuHandler,
-    //user2: menuHandler,
-    //bot3: menuHandler
-
+    bot: menuHandler,
+	bot1_1: urlHandler,
+	bot_1_2:contactoHandler
 }

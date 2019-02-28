@@ -1,15 +1,24 @@
 [main]
 Bienvenido soy un asistente del área de RH, encargado de resolver cualquier duda o aclaración de los empleados:continue
-	Si tiene alguna duda escribe "ok"
-        beneficiosLabel: ok | OK | Ok | oK 
+	Si tiene alguna duda escribe "ok":defex
+        beneficiosLabel: ok | OK | Ok | oK | Si
             bot:Estos son tus beneficios, si tienes alguna duda puedes seleccionar una de las siguientes opciones:[[{{b1}},{{b2}},{{b3}},{{b4}},{{b5}},{{b6}},{{b7}},{{b8}},{{b9}},{{b10}},{{b11}}]]
             	user1: b1
             		bot1:{{descr1}}:continue
-            			bot1_1:Desea ver los detalles de este beneficio... [[Si, No]]
+            			bot1_1:Ver detalles de este beneficio... [[Si,No]]
             				user1_1:Si
-            					bot1_1_2:Puedes consultar los detalles en este Link: {{url1}}
+            					bot1_1_2:Puedes consultar los detalles en este Link: {{url1}}:continue
+            						bot_1_2:Resolviste tu duda [[Si,No]]
+            							user1_2_1:Si
+            								Desea realizar otra consulta [[Si, No]]
+            									Si
+            										:call default.menu_beneficios
+            									No
+            										:call default.despedida
+            							user1_2_2:No
+            								:call default.contacto
             				user1_2:No
-            					Deseas realizar otra consulta..[[Si, No]]
+            					bot1_1_3: :call default.despedida
             	user2: b2
             		bot2:{{descr2}} 
             	user3: b3
@@ -30,4 +39,26 @@ Bienvenido soy un asistente del área de RH, encargado de resolver cualquier dud
             		bot10:{{descr10}}
             	user11: b11
         			bot11:{{descr11}}
-            	
+[menu_beneficios] 
+Escribe "ok"
+
+[common]
+Hola | buenos dias | hola | ola | buenas tardes | quien eres
+	:call default.main
+	
+[despedida]
+Espero haber sido de gran ayuda, que tenga un excelente dia, adios...| Espero haber resolvido su duda, buen día|Hasta pronto, bonito dia
+
+[despedida_sin_exito]
+Lamento no poder ayudarlo...adios|Lamento no poder ayudarlo, bonito día|Una disculpa, que tenga un exelente dia
+
+[contacto]
+rh:Contacta a {{responsable}}:continue
+	Sus datos son: \n Correo: {{correo}} \n Teléfono: {{telefono}} ext. {{ext}}:continue
+		En un horario de {{horario}}:continue
+			:call default.despedida_sin_exito
+    
+    
+    
+    
+    
