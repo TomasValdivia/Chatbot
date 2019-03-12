@@ -2,10 +2,10 @@
 Bienvenido soy un asistente del área de RH, encargado de resolver cualquier duda o aclaración de los empleados:continue
 	Si tienes alguna duda escribe "ok":defex
         beneficiosLabel: ok | OK | Ok | oK 
-            bot:Estos son tus beneficios, si tienes alguna duda puedes seleccionar una de las siguientes opciones:[[{{b1}},{{b2}},{{b3}},{{b4}},{{b5}},{{b6}},{{b7}},{{b8}},{{b9}},{{b10}},{{b11}}]]
+            bot:Estos son tus beneficios, cual deseas consultar:\n{{b1}}
             	user1: b1
             		bot1:{{descr1}}:continue
-            			bot1_0:Ver detalles[[Si claro]] 
+            			bot1_0:¿Desea ver los detalles?[[Si claro]] 
             				user1_0:Si claro
             					bot1_1:Puedes consultar los detalles en este Link:\n{{url1}}:continue 
             						bot1_2:Resolviste tu duda [[Si,No]]
@@ -147,11 +147,10 @@ Hola | buenos dias | hola | ola | buenas tardes | quien eres
 [despedida]
 Espero haber sido de gran ayuda, que tenga un excelente dia, adios...| Espero haber resolvido su duda, buen día|Hasta pronto, bonito dia
 
-[despedida_sin_exito]
-Lamento no poder ayudarlo...adios|Lamento no poder ayudarlo, bonito día|Una disculpa por no haber podido ayudarlo, que tenga un exelente dia
-
 [contactos]
 Contacta a {{responsable}}:continue
 	Sus datos son: \n Correo: {{correo}} \n Teléfono: {{telefono}} ext. {{ext}}:continue
         En un horario de {{horario}}:continue
-        	:call default.despedida_sin_exito
+        	Una disculpa, lamento no poder ayudarlo, hasta pronto, adios|Lamento no poder ayudarlo, bonito día|Una disculpa por no haber podido ayudarlo, que tenga un exelente dia
+				No se preocupe|No hay problema|De todas formas gracias
+					Ok. Hasta pronto...
