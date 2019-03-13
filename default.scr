@@ -2,148 +2,27 @@
 Bienvenido soy un asistente del área de RH, encargado de resolver cualquier duda o aclaración de los empleados:continue
 	Si tienes alguna duda escribe "ok":defex
         beneficiosLabel: ok | OK | Ok | oK 
-            bot:Estos son tus beneficios, cual deseas consultar:\n{{b1}}
+            bot:Estos son tus beneficios, ¿Cuál deseas consultar?\n{{b1}}
             	user1: b1
-            		bot1:{{descr1}}:continue
-            			bot1_0:¿Desea ver los detalles?[[Si claro]] 
-            				user1_0:Si claro
-            					bot1_1:Puedes consultar los detalles en este Link:\n{{url1}}:continue 
-            						bot1_2:Resolviste tu duda [[Si,No]]
-            							user1_1:Si
-            								bot1_3:Desea realizar otra consulta [[Si,No]]
-            									Si
-            										:call default.menu_beneficios
-            									No
-            										:call default.despedida
-            							user1_2:No
-            								rh: :call default.contactos
-            	user2: b2
-            		bot2:{{descr2}}:continue
-            			bot2_0:Ver datalles...[[Si]]
-            				user2_0:Si
-            					bot2_1:Te dejo el siguiente link:\n{{url2}}:continue
-            						bot2_2:Resolviste tu duda [[Si,No]]
-            							user2_1:Si
-            								bot2_4:Desea realizar otra consulta [[Si,No]]
-            									Si
-            										:call default.menu_beneficios
-            									No
-            										:call default.despedida
-            	user3: b3
-            		bot3:{{descr3}}:continue 
-            			bot3_0:Desea ver los detalles...[[Si por favor]]
-            				user3_0:Si por favor
-            					bot3_1: Te dejo el siguiente link:\n{{url3}}:continue
-            						bot3_2:Resolviste tu duda [[Si,No]]
-            							user3_1:Si
-            								bot3_4:Desea realizar otra consulta [[Si,No]]
-            									Si
-            										:call default.menu_beneficios
-            									No
-            										:call default.despedida
-            	user4: b4
-            		bot4:{{descr4}}:continue
-            			bot4_0:Desea ver los detalles...[[Si gracias]]
-            				user4_0:Si gracias
-            					bot4_1: Te dejo el siguiente Link:\n{{url4}}:continue
-            						bot4_2:Resolviste tu duda??[[Si,No]]
-	            						user4_1:Si
-	            							bot4_3:Desea realizar otra consulta[[Si,No]]
-	            								Si
-	            									:call default.menu_beneficios
-	            								No
-	            									:call default.despedida
-            	user5: b5
-            		bot5:{{descr5}}:continue
-            			bot5_0:Desea ver los detalles...[[Si por supuesto]]
-            				user5_0:Si por supuesto
-            					bot5_1: Consulta los detalles en este link:\n{{url5}}:continue
-            						bot5_2:Resolviste tu duda?[[Si,No]]
-            							user5_1:Si
-            								bot5_3:Desea realizar otra consulta?[[Si,No]]
-            									Si
-            										:call default.menu_beneficios
-            									No
-            										:call default.despedida
-            	user6: b6
-            		bot6:{{descr6}}:continue
-            			bot6_0:¿Desea ver los detalles de este beneficio?[[Si con mucho gusto]]
-            				user6_0:Si con mucho gusto
-            					bot6_1:Puedes consultar los detalles en este Link:\n{{url6}}:continue
-            						bot6_2:¿Resolviste tu duda?[[Si,No]]
-            							user6_1:Si
-            								bot6_3:¿Deseas realizar otra consulta?[[Si,No]]
-            									Si
-            										:call default.menu_beneficios
-            									No
-            										:call default.despedida
-            	user7: b7
-            		bot7:{{descr7}}:continue
-            			bot7_0:¿Le gustaria ver los detalles?[[Claro que si. Por favor]]
-            				user7_0:Claro que si. Por favor
-            					bot7_1:Puedes consultarlos en el siguiente Link:\n{{url7}}:continue
-            						bot7_2:¿Aclaraste tu duda?[[Si,No]]
-            							user7_1:Si
-            								bot7_3:¿le gustaria realizar otra consulta?[[Si,No]]
-            									Si
-            										:call default.menu_beneficios
-            									No
-            										:call default.despedida
-            	user8: b8
-            		bot8:{{descr8}}:continue
-            			bot8_0:¿Esta interesado en ver los detalles?[[Si. Estoy interesado]]
-							user8_0:Si. Estoy interesado
-								bot8_1:Para más detalles puede consultar el siguiente Link:\n{{url8}}:continue
-									bot8_2:¿Logro aclarar sus dudas?[[Si,No]]
-										user8_1:Si
-											bot8_3:¿Le interesa realizar otra consulta?[[Si,No]]
-												Si
-													:call default.menu_beneficios
-												No
-													:call default.despedida
-            	user9: b9
-            		bot9:{{descr9}}:continue
-            			bot9_0:¿Le gustaría ver los detalles de este beneficio?[[Si. Claro que me gustaría]]
-            				user9_0:Si. Claro que me gustaría
-            					bot9_1:Puede consultar los detalles en este Link:\n{{url9}}:continue
-            						bot9_2:¿Solucionaste tu duda?[[Si,No]]
-            							user9_1:Si
-            								bot9_3:¿Le gustaría hacer otra consulta?[[Si,No]]
-            									Si
-            										:call default.menu_beneficios
-            									No
-            										:call default.despedida
-            	user10: b10
-            		bot10:{{descr10}}:continue
-            			bot10_0:¿Desea ver los detalles?[[Si deseo verlo]]
-            				user10_0:Si deseo verlo
-            					bot10_1:Te dejo el siguiente Link para que puedas consultar:\n{{url10}}:continue
-            						bot10_2:¿Resolviste tu duda?[[Si,No]]
-            							user10_1:Si
-            								bot10_3:¿Esta interesado en otra consulta?[[Si,No]]
-            									Si
-            										:call default.menu_beneficios
-            									No
-            										:call default.despedida
-            	user11: b11
-        			bot11:{{descr11}}:continue
-        				bot11_0:¿Desea ver los detalles?[[Si deseo consultarlo]]
-            				user11_0:Si deseo consultarlo
-            					bot11_1:Te dejo el siguiente Link para que puedas consultar:\n{{url11}}:continue
-            						bot11_2:¿Resolviste tu duda?[[Si,No]]
-            							user11_1:Si
-            								bot11_3:¿Esta interesado en otra consulta?[[Si,No]]
-            									Si
-            										:call default.menu_beneficios
-            									No
-            										:call default.despedida
+            		bot1_0:¿Desea ver los detalles?[[Si claro]] 
+            			user1_0:Si claro
+            				bot1_1:Puedes consultar los detalles de este beneficio en este Link:\n{{url}}:continue 
+            					bot1_2:Resolviste tu duda [[Si,No]]
+            						user1_1:Si
+            							bot1_3:Desea realizar otra consulta [[Si,No]]
+            								Si
+            									:call default.menu_beneficios
+            								No
+            									:call default.despedida
+            						user1_2:No
+            							rh: :call default.contactos
 [menu_beneficios] 
 Escribe "ok"
 
 [common]
 Hola | buenos dias | hola | ola | buenas tardes | quien eres
 	:call default.main
-
+	
 [despedida]
 Espero haber sido de gran ayuda, que tenga un excelente dia, adios...| Espero haber resolvido su duda, buen día|Hasta pronto, bonito dia
 
