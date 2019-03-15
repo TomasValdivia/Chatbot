@@ -17,7 +17,7 @@ function ScriptHandler(context, event){
     options.data={};
     //options.nlp_threshold = value; 
     //options.apikey = "YOUR-API-KEY";
-    //options.default_message = "Sorry Some Error Occurred.";
+    options.default_message = "Lo siento, no entendi...";
     // You can add any start point by just mentioning the <script_file_name>.<section_name>
     // options.start_section = "default.main";
     options.success = function(opm){

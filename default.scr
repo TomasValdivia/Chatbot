@@ -2,21 +2,21 @@
 Bienvenido soy un asistente del área de RH, encargado de resolver cualquier duda o aclaración de los empleados:continue
 	Si tienes alguna duda escribe "ok":defex
         beneficiosLabel: ok | OK | Ok | oK 
-            bot:Estos son tus beneficios, ¿Cuál deseas consultar?\n{{b1}}
+            bot:Estos son tus beneficios, ¿Cuál deseas consultar?\n{{beneficios}}
             	user1: b1
             		bot1_0:¿Desea ver los detalles?[[Si claro]] 
             			user1_0:Si claro
             				bot1_1:Puedes consultar los detalles de este beneficio en este Link:\n{{url}}:continue 
             					bot1_2:Resolviste tu duda [[Si,No]]
             						user1_1:Si
-            							bot1_3:Desea realizar otra consulta [[Si,No]]
-            								Si
-            									:call default.menu_beneficios
-            								No
+            							bot1_3:¿Desea realizar otra consulta? [[Si,No]]
+            								Si|si
+            									:call default.beneficios
+            								No|no
             									:call default.despedida
             						user1_2:No
             							rh: :call default.contactos
-[menu_beneficios] 
+[beneficios] 
 Escribe "ok"
 
 [common]
