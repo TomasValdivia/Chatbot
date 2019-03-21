@@ -1,9 +1,9 @@
-		var links=[['1','https://praxair.rubixware.com/benefits/11'],['2','https://praxair.rubixware.com/benefits/13'],
-			['3','https://praxair.rubixware.com/benefits/1'],['4','https://praxair.rubixware.com/benefits/14'],
-			['5','https://praxair.rubixware.com/benefits/15'],['6','https://praxair.rubixware.com/benefits/18'],
-			['7','https://praxair.rubixware.com/benefits/12'],['8','https://praxair.rubixware.com/benefits/16'],
-			['9','https://praxair.rubixware.com/benefits/19'],['10','https://praxair.rubixware.com/benefits/20'],
-			['11','https://praxair.rubixware.com/benefits/21']];
+var links=[['1','https://praxair.rubixware.com/benefits/11'],['2','https://praxair.rubixware.com/benefits/13'],
+		['3','https://praxair.rubixware.com/benefits/1'],['4','https://praxair.rubixware.com/benefits/14'],
+		['5','https://praxair.rubixware.com/benefits/15'],['6','https://praxair.rubixware.com/benefits/18'],
+		['7','https://praxair.rubixware.com/benefits/12'],['8','https://praxair.rubixware.com/benefits/16'],
+		['9','https://praxair.rubixware.com/benefits/19'],['10','https://praxair.rubixware.com/benefits/20'],
+		['11','https://praxair.rubixware.com/benefits/21']];
 //ESTA FUNCION PERMITE OBTENER TODOS LOS BENEFICIOS DE LA API
 function menuHandler (options, event, context, callback) {
 	context.simplehttp.makeGet("https://praxair.rubixware.com/api/v1/benefits/",{},function (context, event) {
@@ -30,7 +30,7 @@ function menuHandler (options, event, context, callback) {
 }
 //ESTA FUNCION PERMITE OBTENER LAS CATEGORIAS DE LA API
 function categoriasHandler (options, event, context, callback) {
-	context.simplehttp.makeGet("https://praxair.rubixware.com/api/v1/benefits/",{},function (context, event,err) {
+	context.simplehttp.makeGet("https://praxair.rubixware.com/api/v1/benefits/",{},function (context, event) {
 		var beneficios = JSON.parse(event.getresp);//obtenemos todos los beneficios de la API en json
 		var bene = beneficios.benefits_categories.benefits;//accede a los beneficios de la API 
 		var category = beneficios.benefits_categories.categories;//accede a las categorias de la API 
