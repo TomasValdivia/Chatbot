@@ -19,7 +19,7 @@ Bienvenido soy un asistente del área de RH, encargado de resolver cualquier dud
         categoriasLabel: Buscar por categoria
         	bott:Estos son las categorias, ¿Cuál deseas consultar?\n{{categorias}}
         		user2:c1
-        			bot2:Categoría: {{titulo_categ}}\nSelecciona el número para consultar\n{{respuesta}}
+        			bot2:Categoría: {{titulo_categoria}}\nSelecciona el número para consultar\n{{beneficio_categoria}}
         				user3:r1
 [beneficios] 
 Escribe "ok"
@@ -32,9 +32,9 @@ Hola | buenos dias | hola | ola | buenas tardes | quien eres |ok
 Espero haber sido de gran ayuda, que tenga un excelente dia, adios...| Espero haber resolvido su duda, buen día|Hasta pronto, bonito dia
 
 [contactos]
-Contacta a {{responsable}}:continue
-	Sus datos son: \n Correo: {{correo}} \n Teléfono: {{telefono}} ext. {{ext}}:continue
-        En un horario de {{horario}}:continue
+Contacta a {{responsible}}:continue
+	Sus datos son: \n Correo: {{email}} \n Teléfono: {{phone}} ext. {{ext}}:continue
+        En un horario de {{hours}}:continue
         	Una disculpa, lamento no poder ayudarlo, hasta pronto, adios|Lamento no poder ayudarlo, bonito día|Una disculpa por no haber podido ayudarlo, que tenga un exelente dia
 				No se preocupe|No hay problema|De todas formas gracias
 					Ok. Hasta pronto...
